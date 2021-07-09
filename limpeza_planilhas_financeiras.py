@@ -1,11 +1,9 @@
 #%%
 from ntpath import join
-import openpyxl
 import pandas as pd
-import glob as gb
-import time
-from pandas.io import excel
 import os
+#import glob as gb
+#from pandas.io import excel
 
 class Excel_file_cleaner ():
 
@@ -32,17 +30,19 @@ class Excel_file_cleaner ():
             try:
                 
                 # anexar path ao nome do arquivo
-                file_name = input("")
-                if file_name != "done":
+                file_name = input("Digite o nome (contendo a extensão)das planilhas que quer filtrar")
+
+                if file_name != "":
                     home = os.path.expanduser("~")
                     download_folder_path = os.path.join(home,"Downloads")
                     file = join(f"{download_folder_path}\{file_name}")
                     self.excel_files.append(file)
-                        
+                       
             #quebrar loop
                 else:
                     print(self.excel_files)
                     run = False
+            
             except Exception as e:
                 
                 print(f"Excessão {e}: O nome do arquivo digitado foi {file}, esse nome está correto?")
@@ -113,7 +113,7 @@ class Excel_file_cleaner ():
 
             display(filtered_file) #mostrar arquivo antes da filtragem automática
             pd.set_option("display.max_rows", None)
-            filtered_file = filtered_file.dropna(how = "all", axis=0) #filtrar automaticamente linhas contendo erros 
+            filtered_file = filtered_file.dropna(how = "all", axis=0, subset="Unnamed 1") #filtrar automaticamente linhas contendo erros 
 
             display(filtered_file) #mostrar arquivo depois da  antes da corr
 
@@ -135,5 +135,7 @@ excel_cleaner = Excel_file_cleaner()
 
 excel_cleaner.iniciar()
 
+
+# %%
 
 # %%

@@ -6,9 +6,15 @@
 > - Filtrar restante das células manualmente
 
 
-<h1>ULTIMAS ATUALIZAÇÕES</h1>
+<h1>PRÓXIMAS ATUALIZAÇÕES</h1>
 
+
+> - [x] Evitar que o programa delete linhas que são desejadas
+> - [x] Utilizar o "Enter" como gatilho para o próximo passo do programa
+> - [ ] Formatar planilha como tabela
+> - [ ] Possibilidade de renomear colunas
 > - [ ] Tratar Possíveis Erros no momento da digitação dos nomes das planilhas
+> - [ ] Abrir deletar último display do arquivo do terminal
 
 <h1>ULTIMAS ATUALIZAÇÕES</h1>
 
